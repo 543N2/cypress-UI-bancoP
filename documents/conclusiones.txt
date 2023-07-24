@@ -1,0 +1,31 @@
+---------------------------------
+OBSERVACIONES Y CONCLUSIONES
+---------------------------------
+
+Dado el tamaño del ejercicio, se optó por utilizar Custom Commands en lugar de Page Object Model,
+reuniendo tanto interacciones como pasos comunes en las pruebas requeridas, y agrupando los localizadores
+de elementos en un objeto aparte. Se encapsulan comportamientos en metodos referentes a los pasos de prueba 
+sugeridos.
+
+En el principio del flujo se encontró que el botón de "Add to cart" de los productos en la página
+principal tiene comportamiento diferente dependiendo de si el producto requiere información
+extra, cargando la página del producto dado el caso, o agregandolo al carrito en caso contrario.
+
+Para el caso del producto "iPhone", a pesar de no contar con stock, puede ser agregado al carrito y 
+su flujo de compra puede completarse.
+
+En el proceso de completar el "checkout" de invitado sucede un cambio de dominio asociado a la
+implementación del protocolo https para la sección de captura de información sensible del comprador.
+
+De manera aparentemente aleatoria, la aplicación presenta una excepción: 
+"pagespeed not defined". Se ha restringido el comportamiento de falla de la ejecución para las
+excepciones, con motivo de no interferir con las pruebas funcionales.
+
+Se ha dispuesto un test intencionalmente fallido ('Pedro compra dos productos exitosamente') para 
+visualizar el funcionamiento de la herramienta de reportes.
+
+Como opción de mejora, se plantea la incorporación de Page Object Model o App Actions, además de
+incluir flujos adicionales a los "happy path".
+
+
+
